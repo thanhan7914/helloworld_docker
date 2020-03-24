@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  # workspace container
+  workspace:
+    build:
+      context: ./workspace
+    working_dir: /app
+    volumes:
+      - ./workspace:/var/www
+  # php-fpm
+  app:
+    build:
+      context: ./phpfpm
+    depends_on:
+      - workspace
+    working_dir: /var/www
+    volumes:
+      - workspace:/var/www/
+  # nginx
+  web:
+    build:
+      context: ./nginx
+    working_dir: /var/www
+    ports:
+      - 8080:80
