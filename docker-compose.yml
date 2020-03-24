@@ -7,7 +7,7 @@ services:
       context: ./workspace
     working_dir: /app
     volumes:
-      - ./workspace:/var/www
+      - ./workspace:/app
   # php-fpm
   app:
     build:
@@ -16,7 +16,7 @@ services:
       - workspace
     working_dir: /var/www
     volumes:
-      - workspace:/var/www/
+      - ./workspace:/var/www/
   # nginx
   web:
     build:

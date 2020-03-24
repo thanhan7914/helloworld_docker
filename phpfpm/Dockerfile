@@ -6,4 +6,6 @@ RUN apt-get update && apt-get install -y libmcrypt-dev \
     && docker-php-ext-enable imagick \
     && docker-php-ext-install mcrypt pdo_mysql
 
+WORKDIR /var/www
+
 RUN chmod -R 777 storages/
