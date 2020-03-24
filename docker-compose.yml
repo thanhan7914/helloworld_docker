@@ -16,7 +16,7 @@ services:
       - workspace
     working_dir: /var/www
     volumes:
-      - ./workspace:/var/www/
+      - ./workspace:/var/www
   # nginx
   web:
     build:

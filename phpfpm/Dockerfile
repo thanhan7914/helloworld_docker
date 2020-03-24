@@ -8,4 +8,6 @@ RUN apt-get update && apt-get install -y libmcrypt-dev \
 
 WORKDIR /var/www
 
+ADD . /var/www
+
 RUN chmod -R 777 storages/
