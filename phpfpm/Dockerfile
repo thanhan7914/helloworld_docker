@@ -8,6 +8,6 @@ RUN apt-get update && apt-get install -y libmcrypt-dev \
 
 WORKDIR /var/www
 
-ADD . /var/www
+ADD ./laravel /var/www
 
-RUN chmod -R 777 storages/
+RUN chmod -R 777 storage/
